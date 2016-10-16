@@ -1,8 +1,11 @@
 {
     "name": "RestCalc",
     "version": "1.0.0",
+    "main":"server.js",
     "keywords": ["util", "functional", "server", "client", "browser"],
     "author": "Peter",
-    "contributors": [],
-    "dependencies": {}
+    "dependencies": {
+        "express":"latest",
+        "node-restful":"latest"
+    }
 }
