@@ -1,56 +1,38 @@
 <html>
-    <head>
-        <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-        <script>
-            $(document).ready(function () {
-                $("#calculatorForm").submit(function (e) {
-                    e.preventDefault(); //STOP default action
-                    var postData = $(this).serializeArray();
-                    var formURL = $(this).attr("action");
-                    $.ajax({
-                            url: formURL,
-                            type: "POST",
-                            data: postData,
-                            success: function (data, textStatus, jqXHR) {
-                                $("#result").html(data);
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                $("#result").html(errorThrown);
-                            }
-                    });
-                    return false;
-                });
-            });
-        </script>
-        <title>My First Rest Action Bean (with jQuery!)</title>
-        <style type="text/css">
-            input.error { background-color: yellow; }
-        </style>
-    </head>
-    <body>
-        <h1>Stripes Calculator using RestActionBean</h1>
-        Hi, I'm the Stripes Calculator. I can only do addition. (omdat peter niet goed snapt hoe dit allemaal werkt) Maybe, some day, a nice programmer
-        will come along and teach me how to do other things?
-        <form id="calculatorForm" action="/calculate" focus="" method="post">
-            <table>
-                <tr>
-                    <td>Number 1:</td>
-                    <td><input type="text" name="numberOne"/></td>
-                </tr>
-                <tr>
-                    <td>Number 2:</td>
-                    <td><input type="text" name="numberTwo"/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Add"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Result:</td>
-                    <td id="result">${actionBean.result}</td>
-                </tr>
-            </table>
-        </form>
-    </body>
+<head></head>
+<body>
+<h3>Simple Calculator</h3>
+<br/>
+<form Name="calc">
+<table border=2>
+<tr>
+<td colspan=4><input type=text Name="display"></td>
+</tr>
+<tr>
+<td><input type=button value="0" OnClick="calc.display.value+='0'"></td>
+<td><input type=button value="1" OnClick="calc.display.value+='1'"></td>
+<td><input type=button value="2" OnClick="calc.display.value+='2'"></td>
+<td><input type=button value="+" OnClick="calc.display.value+='+'"></td>
+</tr>
+<tr>
+<td><input type=button value="3" OnClick="calc.display.value+='3'"></td>
+<td><input type=button value="4" OnClick="calc.display.value+='4'"></td>
+<td><input type=button value="5" OnClick="calc.display.value+='5'"></td>
+<td><input type=button value="-" OnClick="calc.display.value+='-'"></td>
+</tr>
+<tr>
+<td><input type=button value="6" OnClick="calc.display.value+='6'"></td>
+<td><input type=button value="7" OnClick="calc.display.value+='7'"></td>
+<td><input type=button value="8" OnClick="calc.display.value+='8'"></td>
+<td><input type=button value="x" OnClick="calc.display.value+='*'"></td>
+</tr>
+<tr>
+<td><input type=button value="9" OnClick="calc.display.value+='9'"></td>
+<td><input type=button value="C" OnClick="calc.display.value=''"></td>
+<td><input type=button value="=" OnClick="calc.display.value=eval(calc.display.value)"></td>
+<td><input type=button value="/" OnClick="calc.display.value+='/'"></td>
+</tr>
+</table>
+</form>
+</body>
 </html>

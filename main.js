@@ -1,8 +1,0 @@
-{
-    "name":"restful",
-    "main":"server.js",
-    "dependencies":{
-        "express":"latest",
-        "node-restful":"latest"
-    }
-}
