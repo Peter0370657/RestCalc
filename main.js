@@ -14,7 +14,7 @@ app.post('/', function(request, response){
     ;
 });
 
-app.listen(1234);
+app.listen(3000);
 
 
-console.log("Hallo meneer de rekenkundige uil");
+console.log("Hallo meneer de uil");

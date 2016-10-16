@@ -1,5 +1,5 @@
 {
-  "name": "calculator",
+  "name": "RestCalc",
   "version": "1.0.0",
   "keywords": [
     "util",
@@ -8,7 +8,7 @@
     "client",
     "browser"
   ],
-  "author": "Potr",
+  "author": "Peter copy wibren",
   "contributors": [],
   "dependencies": {
     "body-parser": "^1.15.2",
