@@ -1,26 +1,20 @@
-var express = require('express'),
-    bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
-    morgan = require('morgan'),
-    restful = require('node-restful'),
-    mongoose = restful.mongoose;
-var app = express();
+var express = require("express");
+var app = new express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({'extended':'true'}));
-app.use(bodyParser.json());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
-app.use(methodOverride());
 
-mongoose.connect("mongodb://localhost/resources");
+app.get("/", function (req, res) {
+    // __dirname = The name of the directory that the currently executing script resides in. https://nodejs.org/docs/latest/api/globals.html#globals_dirname
+    res.sendFile( __dirname + '/index.html');
+    });
 
-var Resource = app.resource = restful.model('resource', mongoose.Schema({
-    title: String,
-    year: Number,
-  }))
-  .methods(['get', 'post', 'put', 'delete']);
+app.post('/', function(request, response){
+    console.log(eval(request.body.opdracht));
+    ;
+});
 
-Resource.register(app, '/resources');
+app.listen(1234);
 
-app.listen(3000);
-console.log("hallo meneer de uil.");
+
+console.log("Hallo meneer de rekenkundige uil");

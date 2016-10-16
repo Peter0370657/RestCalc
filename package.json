@@ -1,7 +1,6 @@
 {
-  "name": "RestCalc",
+  "name": "calculator",
   "version": "1.0.0",
-  "main": "server.js",
   "keywords": [
     "util",
     "functional",
@@ -9,10 +8,12 @@
     "client",
     "browser"
   ],
-  "author": "Peter",
+  "author": "Potr",
+  "contributors": [],
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "latest",
-    "node-restful": "latest"
-  }
+    "express": "^4.14.0"
+  }, "scripts":{
+"start":"node main.js"}
+
 }
