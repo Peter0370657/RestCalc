@@ -1,17 +1,56 @@
 <html>
     <head>
-        <title></title>
-        <meta name="layout" content="main" />
-        <style type="text/css" media="screen">
+        <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $("#calculatorForm").submit(function (e) {
+                    e.preventDefault(); //STOP default action
+                    var postData = $(this).serializeArray();
+                    var formURL = $(this).attr("action");
+                    $.ajax({
+                            url: formURL,
+                            type: "POST",
+                            data: postData,
+                            success: function (data, textStatus, jqXHR) {
+                                $("#result").html(data);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                $("#result").html(errorThrown);
+                            }
+                    });
+                    return false;
+                });
+            });
+        </script>
+        <title>My First Rest Action Bean (with jQuery!)</title>
+        <style type="text/css">
+            input.error { background-color: yellow; }
         </style>
     </head>
     <body>
-
-      This program is a calculator:<br><br>
-      <g:form name="myForm" action="calc">
-      <h1>Introduce first number: </h1><g:textField name="first_nr" value="${myValue}" /> <br>
-      <h1>Introduce second number: </h1><g:textField name="second_nr" value="${myValue}" /> <br>
-      <g:submitButton name="update" value="Update" />
-      </g:form>
+        <h1>Stripes Calculator using RestActionBean</h1>
+        Hi, I'm the Stripes Calculator. I can only do addition. (omdat peter niet goed snapt hoe dit allemaal werkt) Maybe, some day, a nice programmer
+        will come along and teach me how to do other things?
+        <form id="calculatorForm" action="/calculate" focus="" method="post">
+            <table>
+                <tr>
+                    <td>Number 1:</td>
+                    <td><input type="text" name="numberOne"/></td>
+                </tr>
+                <tr>
+                    <td>Number 2:</td>
+                    <td><input type="text" name="numberTwo"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td id="result">${actionBean.result}</td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>
