@@ -18,7 +18,7 @@ voor beiden heb ik geen enkel idee hoe ik er aan moet beginnen. ik heb hier niet
 
 
 Alles werkt nu via URL, geen inputs in de html.
-
+localhost:3456 gevolgd door /calc/  <inputs>
 
 2 + 5 is: /calc/2%2B5
 
