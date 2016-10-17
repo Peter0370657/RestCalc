@@ -15,6 +15,7 @@ app.get("/", function (req, res) {
   
  code overgenomen van Wibren - hij weet hiervan - om na te kijken of het bij mij werkt,
   en als het niet werkt nagaan wat niet werkt, als het wel werkt na gaan waarom (hoe) het werkt. */
+//hmm
 app.post('/calc', function (req, res) {
         
 	console.dir(req.body);  
