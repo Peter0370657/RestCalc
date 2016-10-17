@@ -20,3 +20,11 @@ voor beiden heb ik geen enkel idee hoe ik er aan moet beginnen. ik heb hier niet
 Alles werkt nu via URL, geen inputs in de html.
 
 
+2 + 5 is: /calc/2%2B5
+
+5 - 2 is: /calc/2%2D5
+
+5 * 2 is: /calc/5%2A2
+
+10/2 is : /calc/10%2F2
+
