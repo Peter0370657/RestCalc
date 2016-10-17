@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.get('/', function (req, res) {
-    res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (dit is 2+5)');
+    res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (kijk naar de readme om de code te bekijken voor + - * of \/ )');
     
 });
 /*
