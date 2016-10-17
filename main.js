@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.get('/', function (req, res) {
-    res.send('typ je opdracht in de adresbalk vb: /calc/2+5');
+    res.send('typ je opdracht in de adresbalk vb: /calc/2%2B5  (dit is 2+5)');
     
 });
 /*
@@ -24,14 +24,16 @@ app.get('/calc', function (req, res) {
         var antwoord = eval(req.body.bodycalc);
         console.dir(antwoord);
         res.send(String(antwoord));
+        console.log(req.params.opdracht);
 });
 
-app.post('/calc/:opdracht',function(req, res){ 
+app.get('/calc/:opdracht',function(req, res){ 
         var opdrachtlezen = req.params.opdracht;
         console.log(req.params.opdracht);
         var antwoord = eval(req.params.opdracht);
         console.log(antwoord);
         res.send(String(antwoord));
+        console.log(req.params.opdracht);
 });
 
 
